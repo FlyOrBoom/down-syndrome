@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Down Syndrome</title>
+    <style>
+
+html,body{
+  margin:0;
+  font-size:5vw;
+}
+
+@font-face {
+	font-family:'cmunrm';
+	src: url('cmunrm.woff') format('woff');
+}
+
+body{
+  font-family:cmunrm,sans-serif;
+  overflow:hidden;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+section{
+  position:fixed;
+  cursor:none;
+  user-select:none;
+  width:100vw;
+  height:100vh;
+  top:0;
+  left:0;
+  display:flex;
+  flex-direction:vertical;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  align-content:center;
+  background-size:cover;
+  color:white;
+  visibility:visible;
+  background-color:black;
+  background-image:linear-gradient(90deg,
+    #fff0 30%,#fff4 31%,
+    #fff4 36%,#fff0 37%,
+    #fff0 47%,#fff4 48%,
+    #fff4 52%,#fff0 53%,
+    #fff0 63%,#fff4 64%,
+    #fff4 69%,#fff0 70%
+  );
+}
+
+section.heading{
+  background-color:white;
+  color:red;
+  word-spacing:100vw;
+}
+section.quote{
+  background-color:#f22;
+  color:black;
+  border-color:#c00;
+  font-size:1.2rem;
+}
+
+blockquote{
+  margin:0 1rem;
+}
+p{
+  font-size:.6rem;
+  margin:.5rem 0 0 0;
+}
+
+section>*{
+  display:block;
+}
+
+#title{
+  display:block;
+  line-height:1.44rem;
+  background-color:black;
+  color:white;
+  font-size:2rem;
+}
+
+#c{
+}
+      
+#fs{
+  position:fixed;
+  background:black;
+  color:darkgrey;
+  border:0;
+  width:100vw;
+  height:100vh;
+  cursor:pointer;
+  font-family:sans-serif;
+  font-size:.5rem;
+}
+      
+h1{
+  font-weight:normal;
+  font-size:3rem;
+  overflow-wrap:
+}
+
+h2{
+  display:block;
+  margin:0 2rem 0 0;
+}
+
+section.darken{
+  border-color:#000 !important
+}
+      
+section.end{
+  background-color:red;
+  border-color:white;
+}
+      
+small{
+  margin:0 5rem;
+}
+      
+h3{
+  margin-top:0;
+}
+
+chromosomes{
+  writing-mode:vertical-lr;
+  text-orientation:upright;
+  position:absolute;
+  top:-3rem;
+}
+pair,trio{
+  display:inline-block;
+}
+pair{
+  opacity:.5;
+}
+pair>chromosome{
+  line-height:2rem;
+  letter-spacing:-1.1rem;
+}
+trio{
+  margin:0 1.1rem;
+}
+trio>chromosome{
+  line-height:3.3rem;
+  letter-spacing:-1rem;
+}
+chnum{
+  display:block;
+  width:100%;
+  word-spacing:5.6rem;
+  white-space:nowrap;
+  opacity:.5;
+  position:absolute;
+  bottom:1rem;
+}
+</style>
+    <link rel='preload' as='image' type='image/webp' href='kindling.jpg'>
+    <link rel='preload' as='image' type='image/webp' href='fire.webp'>
+    <link rel='preload' as='image' type='image/webp' href='shelter.jpg'>
+    <link rel='preload' as='image' type='image/webp' href='aftermath.jpg'>
+    <link rel='preload' as='image' type='image/webp' href='future.jpg'>
+  </head>
+  <body>
+    <section class='end'>
+      <h3>‘Deathly silent’: Ecologist describes Australian wildfires’ devastating aftermath</h3>
+      <small>Dyani Lewis, Nature</small>
+      <small>Photo by Matthew Abott</small>
+      <small>Photos by David Mariuz</small>
+      <small>Presentation by Xing</small>
+    </section>
+    <section id='title' class='heading'>
+      <chromosomes>
+        <pair>
+          <chromosome>SHAWN</chromosome>
+          <chromosome>LIU</chromosome>
+        </pair>
+        <trio>
+          <chromosome>DOWN</chromosome>
+          <chromosome>SYND</chromosome>
+          <chromosome>ROME</chromosome>
+        </trio>
+        <pair>
+          <chromosome>KEVIN</chromosome>
+          <chromosome>WU</chromosome>
+        </pair>
+      </chromosomes>
+      <chnum>20 21 22</chnum>
+    </section>
+    <button id='fs'>fullscreen me!</button>
+    <script>
+const doc = document,
+      body = doc.getElementsByTagName('body')[0],
+      fsButton = doc.getElementById('fs'),
+      slides = Array.from(doc.getElementsByTagName('section')).reverse()
+
+let currentSlide = -1
+
+//fsButton.addEventListener('click',()=>{
+  fsButton.style.display='none'
+  body.requestFullscreen()
+
+  doc.addEventListener('keyup',(event)=>{
+    if(
+        event.key==='ArrowUp'||
+        event.key==='ArrowLeft'||
+        event.key==='PageUp'
+    ){
+      currentSlide=Math.max(--currentSlide,0)
+      slides[currentSlide].style.visibility='visible'
+    }else{
+      currentSlide=Math.min(++currentSlide,19)
+      slides[currentSlide-1].style.visibility='hidden'
+    }
+    slides[currentSlide].classList.remove('darken')
+  })
+
+  doc.addEventListener('click',()=>{
+    currentSlide++
+    slides[currentSlide-1].style.visibility='hidden'
+  })
+
+  doc.addEventListener('keydown',()=>{
+    slides[currentSlide].classList.add('darken')
+  })
+  
+//})
+    </script>
+  </body>
+</html>
