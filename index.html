@@ -1192,6 +1192,7 @@ lastSlide	= slides.length - 1,
 slidesCounter	= doc.getElementsByTagName('slides-counter')[0],
 slidesProgress	= doc.getElementsByTagName('slides-progress')[0],
 timeProgress	= doc.getElementsByTagName('time-progress')[0],
+keyHeldDown	= false,
 
 goTo = slide => {
 	const clampedSlide = Math.min(Math.max(0,slide),lastSlide)
@@ -1204,18 +1205,9 @@ goTo = slide => {
 	slidesProgress.style.width = 100*currentSlide/lastSlide + 'vw'
 },
 
-randomInt = ( low , high ) => {
-	return low + Math.round( (high - low) * Math.random() )
-},
+randomInt = ( low , high ) => low + Math.round((high - low) * Math.random()),
 
-chooseRandomBanding = length => {
-	let banding = 'linear-gradient(90deg'
-	for ( let i = 0 ; i <= length ; i++ ) {
-		banding += ',' + ( randomInt(0,1) ? 'white' : 'var(--theme)' )
-	}
-	banding += ')'
-	return banding
-},
+chooseRandomBanding = length => `linear-gradient(90deg${randomInt(0,2**length).toString(2).replace(/0/g,',white').replace(/1/g,',var(--theme)')})`,
 
 setRandomBanding = () => {
 	clearTimeout(bandingAnimation)
@@ -1250,19 +1242,18 @@ startTimer = () => {
 	},1000)
 }
 
-doc.addEventListener( 'keydown' , keyDown => {
-	if ( keyUp.location != 0 ) return
+doc.addEventListener('keydown', keyDown => {
+	if ( keyDown.location != 0 || keyHeldDown ) return
 	const key = keyUp.key
 	goTo (
 		key.match (/(Arrow|Page)(Up|Left)/) ? currentSlide - 1
 		: key.match (/\d/) ? anchors[key]
-																					: currentSlide + 1
+		: currentSlide + 1
 	)
+	keyHeldDown = true
 })
 
-doc.addEventListener('keyup', keyUp => {	
-}
-})
+doc.addEventListener('keyup', keyUp => keyHeldDown = false )
 
 doc.addEventListener('click', () => {
 	goTo(currentSlide + 1)
@@ -1283,9 +1274,7 @@ menus.forEach(menu => {
 	
 	}
 })
-
-goTo ( 0 )
-
+goTo(currentSlide)
 		</script>
 	</body>
 </html>
