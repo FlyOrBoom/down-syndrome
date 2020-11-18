@@ -1181,7 +1181,7 @@ time-progress{
 
 		<script>
 
-let currentSlide = 1, bandingAnimation
+let currentSlide = 1, keyHeldDown = false, bandingAnimation, 
 const
 doc	= document,
 body	= doc.getElementsByTagName('body')[0],
@@ -1192,7 +1192,6 @@ lastSlide	= slides.length - 1,
 slidesCounter	= doc.getElementsByTagName('slides-counter')[0],
 slidesProgress	= doc.getElementsByTagName('slides-progress')[0],
 timeProgress	= doc.getElementsByTagName('time-progress')[0],
-keyHeldDown	= false,
 
 goTo = slide => {
 	const clampedSlide = Math.min(Math.max(0,slide),lastSlide)
