@@ -1244,7 +1244,7 @@ startTimer = () => {
 
 doc.addEventListener('keydown', keyDown => {
 	if ( keyDown.location != 0 || keyHeldDown ) return
-	const key = keyUp.key
+	const key = keyDown.key
 	goTo (
 		key.match (/(Arrow|Page)(Up|Left)/) ? currentSlide - 1
 		: key.match (/\d/) ? anchors[key]
