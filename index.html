@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang='en' dir='ltr'>
-  <head>
-    <title>Down Syndrome</title>
-    <meta name='author' content='Xing Liu & Kevin Wu'>
-    <meta name='description' content='A presentation on the chromosomal disorder'>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <style>
+	<head>
+		<title>Down Syndrome</title>
+		<meta name='author' content='Xing Liu & Kevin Wu'>
+		<meta name='description' content='A presentation on the chromosomal disorder'>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<style>
 
 html,body{
-  margin:0;
-  font-size:5vmin
+	margin:0;
+	font-size:5vmin
 }
 
 @font-face {
@@ -29,1356 +29,1263 @@ html,body{
 }
 
 body{
-  overflow:hidden;
-  background:black;
-  --theme:#60b;
-  color:white;
-  cursor:none;
+	overflow:hidden;
+	background:black;
+	--theme:#60b;
+	color:white;
+	cursor:none;
 }
 
 *{
-  box-sizing:border-box
+	box-sizing:border-box
 }
 :focus{
-  outline:none
+	outline:none
 }
 
 a{
-  color:#8af;
-  text-decoration:none;
+	color:#8af;
+	text-decoration:none;
 }
 
 slide{
-  position:fixed;
-  user-select:none;
-  width:100vw;
-  height:95vh;
-  top:5vh;
-  left:0;
-  display:flex;
-  flex-direction:vertical;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  align-content:center;
-  background-size:cover;
-  font-family:cmun,sans-serif;
-  background:black;
+	position:fixed;
+	user-select:none;
+	width:100vw;
+	height:95vh;
+	top:5vh;
+	left:0;
+	display:flex;
+	flex-direction:vertical;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	align-content:center;
+	background-size:cover;
+	font-family:cmun,sans-serif;
+	background:black;
 }
 slide[hidden]{
-  visibility:hidden;
+	visibility:hidden;
 }
 slide[hidden] *{
-  animation:none !important;
+	animation:none !important;
 }
 slide.quote{
-  font-size:1.2rem
+	font-size:1.2rem
 }
 blockquote::before,blockquote::after{
-  display:block;
-  position:absolute;
-  font-size:4rem;
-  font-weight:bold
+	display:block;
+	position:absolute;
+	font-size:4rem;
+	font-weight:bold
 }
 blockquote::before{
-  top:1rem;
-  left:30vw
+	top:1rem;
+	left:30vw
 }
 blockquote::after{
-  content:'„';
-  bottom:1rem;
-  right:30vw
+	content:'„';
+	bottom:1rem;
+	right:30vw
 }
 quote::before,blockquote::before{
-  content:'“'
+	content:'“'
 }
 quote::after{
-  content:'”'
+	content:'”'
 }
 
 slide>*{
-  display:block
+	display:block
 }
 
 slide#title{
-  font-size:2rem
+	font-size:2rem
 }
 slide#title::before,slide#title::after{
-  writing-mode:vertical-lr;
-  position:absolute;
-  color:var(--theme);
-  display:block;
-  width:100%;
-  filter:blur(.1rem)
+	writing-mode:vertical-lr;
+	position:absolute;
+	color:var(--theme);
+	display:block;
+	width:100%;
+	filter:blur(.1rem)
 }
 slide#title::before{
-  content:'trisomy';
-  transform:translateX(calc(100vw - 3rem));
-  font-size:2.5rem
+	content:'trisomy';
+	transform:translateX(calc(100vw - 3rem));
+	font-size:2.5rem
 }
 slide#title::after{
-  content:'20 21 22';
-  word-spacing:5rem
+	content:'20 21 22';
+	word-spacing:5rem
 }
 
 animation{
-  display:contents;
+	display:contents;
 }
 animation.mitosis>cell{
-  display:block;
-  position:absolute;
-  filter:blur(.4rem);
-  width:4rem;
-  height:4rem;
-  border-radius:50%;
-  background:white;
-  animation:mitosis-simple-left 10s steps(10) forwards
+	display:block;
+	position:absolute;
+	filter:blur(.4rem);
+	width:4rem;
+	height:4rem;
+	border-radius:50%;
+	background:white;
+	animation:mitosis-simple-left 10s steps(10) forwards
 }
 animation.mitosis>cell.right{
-  animation-name:mitosis-simple-right
+	animation-name:mitosis-simple-right
 }
 @keyframes mitosis-simple-left{
-  0%{
-    transform:none;
-  }
-  100%{
-    transform:translateX(-40vw);
-    filter:blur(2rem);
-    opacity:0;
-  }
+	0%{
+		transform:none;
+	}
+	100%{
+		transform:translateX(-40vw);
+		filter:blur(2rem);
+		opacity:0;
+	}
 }
 @keyframes mitosis-simple-right{
-  0%{
-    transform:none;
-  }
-  100%{
-    transform:translateX(40vw);
-    filter:blur(2rem);
-    opacity:0;
-  }
+	0%{
+		transform:none;
+	}
+	100%{
+		transform:translateX(40vw);
+		filter:blur(2rem);
+		opacity:0;
+	}
 }
 animation.zoom-in>h2{
-  font-size:1rem;
-  animation:zoom-in 3s steps(3) forwards
+	font-size:1rem;
+	animation:zoom-in 3s steps(3) forwards
 }
 @keyframes zoom-in{
-  0%{
-    filter:blur(.1rem);
-    transform:scale(0.8)
-  }
-  100%{
-    filter:blur(.05rem);
-    transform:scale(1)
-  }
+	0%{
+		filter:blur(.1rem);
+		transform:scale(0.8)
+	}
+	100%{
+		filter:blur(.05rem);
+		transform:scale(1)
+	}
 }
 
 h1,h2,h3,p,item,blockquote,bib{
-  font-weight:normal;
-  flex-basis:100vw;
-  margin:0;
+	font-weight:normal;
+	flex-basis:100vw;
+	margin:0;
 }
 h1,h2,h3,p,item{
-  white-space:nowrap;
+	white-space:nowrap;
 }
 
 h1{
-  font-size:2rem;
+	font-size:2rem;
 }
 h2{
-  font-size:2rem;
+	font-size:2rem;
 }
 h2:not(.chromosome),item{
-  filter:drop-shadow(0 0 .5rem var(--theme));
+	filter:drop-shadow(0 0 .5rem var(--theme));
 }
 h3{
-  font-size:1rem;
+	font-size:1rem;
 }
 p{
-  font-size:1.5rem;
+	font-size:1.5rem;
 }
 item{
-  font-size:1.25rem;
+	font-size:1.25rem;
 }
 item::before,item::after{
-  content:'·';
-  margin:0 .4rem;
-  text-shadow:0 0 .5rem white;
-  color:var(--theme);
+	content:'·';
+	margin:0 .4rem;
+	text-shadow:0 0 .5rem white;
+	color:var(--theme);
 }
 item.selected{
-  font-size:1.8rem;
+	font-size:1.8rem;
 }
 item.selected::before,item.selected::after{
-  margin:0 1.2rem;
+	margin:0 1.2rem;
 }
 p,bib,blockquote{
-  max-width:125vh;
+	max-width:125vh;
 }
 bib{
-  font-size:.8rem;
-  text-align:left;
-  line-height:1.5;
-  margin-top:.5rem;
+	font-size:.8rem;
+	text-align:left;
+	line-height:1.5;
+	margin-top:.5rem;
 }
 
 #title>.chromosome:nth-of-type(3),
 #title>.chromosome:nth-of-type(6),
 h2~p{
-  margin-top:1rem;
+	margin-top:1rem;
 }
 h1.chromosome{
-  letter-spacing:1rem;
+	letter-spacing:1rem;
 }
 h2.chromosome{
-  letter-spacing:.5rem;
+	letter-spacing:.5rem;
 }
 .chromosome{
-  position:relative;
-  height:2.6rem;
-  margin:0 100vw;
-  text-transform:uppercase;
-  color:black;
-  text-shadow:0 0 .5rem white;
-  mix-blend-mode:exclusion;
-  --banding:linear-gradient(90deg,#fff,#80f,#fff,#fff,#80f,#80f,#80f,#fff,#fff,#80f,#80f,#fff,#80f,#80f,#fff,#80f,#fff,#80f,#fff,#fff);
-  --centromere:50%;
-  --rotation:8deg;
+	position:relative;
+	height:2.6rem;
+	margin:0 100vw;
+	text-transform:uppercase;
+	color:black;
+	text-shadow:0 0 .5rem white;
+	mix-blend-mode:exclusion;
+	--banding:linear-gradient(90deg,#fff,#80f,#fff,#fff,#80f,#80f,#80f,#fff,#fff,#80f,#80f,#fff,#80f,#80f,#fff,#80f,#fff,#80f,#fff,#fff);
+	--centromere:50%;
+	--rotation:8deg;
 }
 .chromosome::before,.chromosome::after{
-  content:'';
-  position:absolute;
-  top:20%;
-  left:-.5rem;
-  display:block;
-  width:100%;
-  height:50%;
-  background:white;
-  background-image:var(--banding);
-  border-radius:100rem;
-  transform-origin:var(--centromere) 0;
-  z-index:-10;
-  mix-blend-mode:multiply;
+	content:'';
+	position:absolute;
+	top:20%;
+	left:-.5rem;
+	display:block;
+	width:100%;
+	height:50%;
+	background:white;
+	background-image:var(--banding);
+	border-radius:100rem;
+	transform-origin:var(--centromere) 0;
+	z-index:-10;
+	mix-blend-mode:multiply;
 }
 .chromosome::before{
-  filter:url(#distort-0) blur(.25rem);
-  transform:rotate(var(--rotation));
+	filter:url(#distort-0) blur(.25rem);
+	transform:rotate(var(--rotation));
 }
 .chromosome::after{
-  filter:url(#distort-1) blur(.25rem);
-  transform:rotate(calc(-1*var(--rotation)));
+	filter:url(#distort-1) blur(.25rem);
+	transform:rotate(calc(-1*var(--rotation)));
 }
 img{
-  --filter:url(#theme);
-  position:absolute;
-  top:0;
-  height:100vh;
-  filter:var(--filter);
-  z-index:-10;
+	--filter:url(#theme);
+	position:absolute;
+	top:0;
+	height:100vh;
+	filter:var(--filter);
+	z-index:-10;
 }
 img[src='down-portrait.jpg']{
-  filter:contrast(2) var(--filter);
+	filter:contrast(2) var(--filter);
 }
 img[src='down-paper.jpg']{
-  filter:var(--filter) blur(.1rem);
+	filter:var(--filter) blur(.1rem);
 }
 img[src='pneumonia.jpg']{
-  filter:invert(1) contrast(2) brightness(0.7) var(--filter);
+	filter:invert(1) contrast(2) brightness(0.7) var(--filter);
 }
 img[src='afp.png']{
-  filter:grayscale(1) invert(1) brightness(0.7)  var(--filter);
+	filter:grayscale(1) invert(1) brightness(0.7)	var(--filter);
 }
 img[src='amniocentesis.jpg']{
-  filter:brightness(0.7) var(--filter);
+	filter:brightness(0.7) var(--filter);
 }
 img[src='leukemia.jpg']{
-  filter:invert(1) hue-rotate(180deg) contrast(1.2) brightness(0.9) var(--filter);
+	filter:invert(1) hue-rotate(180deg) contrast(1.2) brightness(0.9) var(--filter);
 }
 img+p{
-  text-shadow:0 0 .2rem black;
+	text-shadow:0 0 .2rem black;
 }
 
 slides-progress,time-progress{
-  position:fixed;
-  height:1vh;
-  background:var(--theme);
-  filter:blur(.5vh);
-  top:.5vh;
-  transition:width .1s;
+	position:fixed;
+	height:1vh;
+	background:var(--theme);
+	filter:blur(.5vh);
+	top:.5vh;
+	transition:width .1s;
 }
 slides-progress{
-  left:.5vh;
+	left:.5vh;
 }
 time-progress{
-  right:.5vh;
-  width:100vw;
+	right:.5vh;
+	width:100vw;
 }
 
 </style>
-  </head>
-  <body>
-    <main>
+	</head>
+	<body>
+		<main>
 
 <slide>
-  <h3>
-    Digital handout:
-  </h3>
-  <h1>
-    <a href='handout.html'>bit.ly/downhandout</a>
-  </h1>
+	<h3>
+		Digital handout:
+	</h3>
+	<h1>
+		<a href='handout.html'>bit.ly/downhandout</a>
+	</h1>
 </slide>
 
 <!--TITLE-->
 
 <slide class='anchor' id='title'>
-  
-  <h1 class='chromosome'>Shawn</h1>
-  <h1 class='chromosome'>Liu</h1>
-  
-  <h1 class='chromosome'>Down</h1>
-  <h1 class='chromosome'>Synd</h1>
-  <h1 class='chromosome'>rome</h1>
-  
-  <h1 class='chromosome'>Kevin</h1>
-  <h1 class='chromosome'>Wu</h1>
+	
+	<h1 class='chromosome'>Shawn</h1>
+	<h1 class='chromosome'>Liu</h1>
+	
+	<h1 class='chromosome'>Down</h1>
+	<h1 class='chromosome'>Synd</h1>
+	<h1 class='chromosome'>rome</h1>
+	
+	<h1 class='chromosome'>Kevin</h1>
+	<h1 class='chromosome'>Wu</h1>
 
 </slide>
 
 <slide>
-  <item>Background</item>
-  <item>Appearance</item>
-  <item>Problems</item>
-  <item>Experience</item>
-  <item>Causes</item>
-  <item>Detection</item>
-  <item>Treatment</item>
+	<item>Background</item>
+	<item>Appearance</item>
+	<item>Problems</item>
+	<item>Experience</item>
+	<item>Causes</item>
+	<item>Detection</item>
+	<item>Treatment</item>
 </slide>
 
 <!--BACKGROUND-->
 
 <slide class='anchor'>
-  <h2 class='chromosome'>Background</h2>
+	<h2 class='chromosome'>Background</h2>
 </slide>
 <slide>
-  <h2>Down syndrome</h2>
-  <item>Formerly <i>Mongolism</i></item>
-  <item>Down’s syndrome</item>
-  <item>Down’s</item>
-  <item>Trisomy 21</item>
-  <item>Trisomy G</item>
+	<h2>Down syndrome</h2>
+	<item>Formerly <i>Mongolism</i></item>
+	<item>Down’s syndrome</item>
+	<item>Down’s</item>
+	<item>Trisomy 21</item>
+	<item>Trisomy G</item>
 </slide>
 <slide>
-  <p>
-    One in 800-1000<br>
-    children per year are<br>
-    born with the disorder
-  </p>
+	<p>
+		One in 800-1000<br>
+		children per year are<br>
+		born with the disorder
+	</p>
 </slide>
 <slide>
-  <img src='down-portrait.jpg'>
-  <p>
-    Documented by British doctor<br>
-    John Langdon Down<br>
-    in a medical journal<br>
-    from 1866
-  </p>
+	<img src='down-portrait.jpg'>
+	<p>
+		Documented by British doctor<br>
+		John Langdon Down<br>
+		in a medical journal<br>
+		from 1866
+	</p>
 </slide>
 <slide class='quote'>
-  <img src='down-paper.jpg'>
-  <blockquote>
-    [Their] hair is…of a brownish colour, straight and scanty. Their face is flat and broad. The cheeks are roundish. The eyes are obliquely placed…
-  </blockquote>
+	<img src='down-paper.jpg'>
+	<blockquote>
+		[Their] hair is…of a brownish colour, straight and scanty. Their face is flat and broad. The cheeks are roundish. The eyes are obliquely placed…
+	</blockquote>
 </slide>
 
 <!--APPEARANCE-->
 
 <slide class='anchor'>
-  <h2 class='chromosome'>Appearance</h2>
+	<h2 class='chromosome'>Appearance</h2>
 </slide>
 
 <slide>
-  <h2>Smaller body</h2>
-  <p>
-    Face size is in the lowest<br>
-    3%, though visually normal<br>
-    relative to the smaller body
-  </p>
+	<h2>Smaller body</h2>
+	<p>
+		Face size is in the lowest<br>
+		3%, though visually normal<br>
+		relative to the smaller body
+	</p>
 </slide>
 <slide>
-  <h2>Smaller face</h2>
-  <p>
-    Facial features, including<br>
-    ears, nose, and mouth,<br>
-    shrink alongside.<br>
-  </p>
+	<h2>Smaller face</h2>
+	<p>
+		Facial features, including<br>
+		ears, nose, and mouth,<br>
+		shrink alongside.<br>
+	</p>
 </slide>
 <slide>
-  <h2>Smaller mouth</h2>
-  <p>
-    Randomly ordered<br>
-    and unusually shaped<br>
-    teeth
-  </p>
+	<h2>Smaller mouth</h2>
+	<p>
+		Randomly ordered<br>
+		and unusually shaped<br>
+		teeth
+	</p>
 </slide>
 <slide>
-  <h2>Smaller mouth</h2>
-  <p>
-    A relatively large<br>
-    tongue may protrude<br>
-    uncontrollably
-  </p>
+	<h2>Smaller mouth</h2>
+	<p>
+		A relatively large<br>
+		tongue may protrude<br>
+		uncontrollably
+	</p>
 </slide>
 
 <!--PROBLEMS-->
 
 <slide class='anchor'>
-  <h2 class='chromosome'>Problems</h2>
+	<h2 class='chromosome'>Problems</h2>
 </slide>
 <slide class='menu' data-menu='problems'>
-  <item>Muscular</item>
-  <item>Digestive</item>
-  <item>Respiratory</item>
-  <item>Circulatory</item>
-  <item>Sensory</item>
-  <item>Neurological</item>
+	<item>Muscular</item>
+	<item>Digestive</item>
+	<item>Respiratory</item>
+	<item>Circulatory</item>
+	<item>Sensory</item>
+	<item>Neurological</item>
 </slide>
 
 <!--Muscular-->
 <slide class='menu' data-menu='problems' data-selected='muscular'></slide>
 
 <slide>
-  <h2>Low muscle tone</h2>
-  <p>
-    Muscles throughout the<br>
-    body are more relaxed<br>
-    and harder to control
-  </p>
+	<h2>Low muscle tone</h2>
+	<p>
+		Muscles throughout the<br>
+		body are more relaxed<br>
+		and harder to control
+	</p>
 </slide>
 
 <!--Digestive-->
 <slide class='menu' data-menu='problems' data-selected='digestive'></slide>
 
 <slide>
-  <h2>Congenital digestive defects</h2>
-  <h3>10% of infants</h3>
-  <p>
-    Digestive defects that<br>
-    are present in people with<br>
-    Down syndrome from birth
-  </p>
+	<h2>Congenital digestive defects</h2>
+	<h3>10% of infants</h3>
+	<p>
+		Digestive defects that<br>
+		are present in people with<br>
+		Down syndrome from birth
+	</p>
 </slide>
 <slide>
-  <h2>Indigestion</h2>
-  <p>
-    There may be narrowing<br>
-    or blockage of the<br>
-    small intestine
-  </p>
+	<h2>Indigestion</h2>
+	<p>
+		There may be narrowing<br>
+		or blockage of the<br>
+		small intestine
+	</p>
 </slide>
 <slide>
-  <h2>Choking</h2>
-  <p>
-    An opening between the<br>
-    trachea and esophagus lets<br>
-    food to go into the windpipe
-  </p>
+	<h2>Choking</h2>
+	<p>
+		An opening between the<br>
+		trachea and esophagus lets<br>
+		food to go into the windpipe
+	</p>
 </slide>
 <slide>
-  <h2>Celiac disease</h2>
-  <p>
-    A disease where gluten<br>
-    digestion causes damage<br>
-    to the small intestine
-  </p>
+	<h2>Celiac disease</h2>
+	<p>
+		A disease where gluten<br>
+		digestion causes damage<br>
+		to the small intestine
+	</p>
 </slide>
 <slide>
-  <h2>Gastroesophageal reflux</h2>
-  <p>
-    A disorder where acidic<br>
-    foods in the stomach back<br>
-    up into the esophagus
-  </p>
+	<h2>Gastroesophageal reflux</h2>
+	<p>
+		A disorder where acidic<br>
+		foods in the stomach back<br>
+		up into the esophagus
+	</p>
 </slide>
 
 <!--Respiratory-->
 <slide class='menu' data-menu='problems' data-selected='respiratory'></slide>
 
 <slide>
-  <h2>Nasal blockage</h2>
-  <p>
-    A smaller nose and<br>
-    nasal passage can be<br>
-    easily congested
-  </p>
+	<h2>Nasal blockage</h2>
+	<p>
+		A smaller nose and<br>
+		nasal passage can be<br>
+		easily congested
+	</p>
 </slide>
 <slide>
-  <h2>Lung infections</h2>
-  <img src='pneumonia.jpg'>
-  <p>
-    Pneumonia and bronchitis<br>
-    inflame the lungs and other<br>
-    parts of the respiratory tract
-  </p>
+	<h2>Lung infections</h2>
+	<img src='pneumonia.jpg'>
+	<p>
+		Pneumonia and bronchitis<br>
+		inflame the lungs and other<br>
+		parts of the respiratory tract
+	</p>
 </slide>
 <slide>
-  <h2>Sleep apnea</h2>
-  <p>
-    A temporary and<br>
-    involuntary stoppage of<br>
-    breathing during sleep
-  </p>
+	<h2>Sleep apnea</h2>
+	<p>
+		A temporary and<br>
+		involuntary stoppage of<br>
+		breathing during sleep
+	</p>
 </slide>
 <slide>
-  <h2>Sleep apnea</h2>
-  <p>
-    Caused by a relatively<br>
-    larger tongue or cell mass<br>
-    at the back of the throat
-  </p>
+	<h2>Sleep apnea</h2>
+	<p>
+		Caused by a relatively<br>
+		larger tongue or cell mass<br>
+		at the back of the throat
+	</p>
 </slide>
 
 <!--Circulatory-->
 <slide class='menu' data-menu='problems' data-selected='circulatory'></slide>
 
 <slide>
-  <h2>AVSD</h2>
-  <h3>30-40% of cases</h3>
-  <p>
-    A opening is created<br>
-    between the two atriums<br>
-    of the human heart
-  </p>
+	<h2>AVSD</h2>
+	<h3>30-40% of cases</h3>
+	<p>
+		A opening is created<br>
+		between the two atriums<br>
+		of the human heart
+	</p>
 </slide>
 <slide>
-  <h2>AVSD</h2>
-  <h3>30-40% of cases</h3>
-  <p>
-    Oxygenated and<br>
-    deoxygenated blood can<br>
-    accidentally mix
-  </p>
+	<h2>AVSD</h2>
+	<h3>30-40% of cases</h3>
+	<p>
+		Oxygenated and<br>
+		deoxygenated blood can<br>
+		accidentally mix
+	</p>
 </slide>
 <slide>
-  <h2>AVSD</h2>
-  <h3>30-40% of cases</h3>
-  <p>
-    The heart has to grow<br>
-    larger and work harder,<br>
-    shortening the lifespan
-  </p>
+	<h2>AVSD</h2>
+	<h3>30-40% of cases</h3>
+	<p>
+		The heart has to grow<br>
+		larger and work harder,<br>
+		shortening the lifespan
+	</p>
 </slide>
 <slide>
-  <h2>Leukemia</h2>
-  <h3>10-20x higher risk</h3>
-  <img src='leukemia.jpg'>
-  <p>
-    A cancer in which stem<br>
-    cells mutate and displace<br>
-    regular white blood cells
-  </p>
+	<h2>Leukemia</h2>
+	<h3>10-20x higher risk</h3>
+	<img src='leukemia.jpg'>
+	<p>
+		A cancer in which stem<br>
+		cells mutate and displace<br>
+		regular white blood cells
+	</p>
 </slide>
 
 <!--sensory-->
 <slide class='menu' data-menu='problems' data-selected='sensory'></slide>
 
 <slide>
-  <h2>Hearing loss</h2>
-  <h3>Mild to severe in 50% of cases</h3>
-  <p>
-    Infants with the syndrome<br>
-    often have a blocked<br>
-    ear drainage tube
-  </p>
+	<h2>Hearing loss</h2>
+	<h3>Mild to severe in 50% of cases</h3>
+	<p>
+		Infants with the syndrome<br>
+		often have a blocked<br>
+		ear drainage tube
+	</p>
 </slide>
 <slide>
-  <h2>Hearing loss</h2>
-  <h3>Mild to severe 50% of cases</h3>
-  <p>
-    Fluid collects in the<br>
-    middle ear, preventing<br>
-    sound from passing through
-  </p>
+	<h2>Hearing loss</h2>
+	<h3>Mild to severe 50% of cases</h3>
+	<p>
+		Fluid collects in the<br>
+		middle ear, preventing<br>
+		sound from passing through
+	</p>
 </slide>
 
 <slide>
-  <h2>Vision problems</h2>
-  <h3>70% of cases</h3>
-  <p>
-    Higher risks of having<br>
-    eye defects ranging from<br>
-    blurriness to blindness
-  </p>
+	<h2>Vision problems</h2>
+	<h3>70% of cases</h3>
+	<p>
+		Higher risks of having<br>
+		eye defects ranging from<br>
+		blurriness to blindness
+	</p>
 </slide>
 <slide>
-  <h2>Astigmatism</h2>
-  <h3>20% of cases</h3>
-  <p>
-    An irregular eye shape<br>
-    prevents light rays<br>
-    from focusing
-  </p>
+	<h2>Astigmatism</h2>
+	<h3>20% of cases</h3>
+	<p>
+		An irregular eye shape<br>
+		prevents light rays<br>
+		from focusing
+	</p>
 </slide>
 <slide>
-  <h2>Strabismus</h2>
-  <h3>Crossed eyes</h3>
-  <p>
-    Eye muscle imbalance can<br>
-    cause the brain to ignore<br>
-    one eye, turning it blind
-  </p>
+	<h2>Strabismus</h2>
+	<h3>Crossed eyes</h3>
+	<p>
+		Eye muscle imbalance can<br>
+		cause the brain to ignore<br>
+		one eye, turning it blind
+	</p>
 </slide>
 
 <!--Neurological-->
 <slide class='menu' data-menu='problems' data-selected='neurological'></slide>
 
 <slide>
-  <h2>Mental retardation</h2>
-  <h3>highly varying</h3>
-  <p>
-    Most have normal or<br>
-    near-normal IQs, ranging<br>
-    from 40 to 70
-  </p>
+	<h2>Mental retardation</h2>
+	<h3>highly varying</h3>
+	<p>
+		Most have normal or<br>
+		near-normal IQs, ranging<br>
+		from 40 to 70
+	</p>
 </slide>
 <slide>
-  <h2>Mental retardation</h2>
-  <h3>highly varying</h3>
-  <p>
-    Mainly affects areas<br>
-    related to communication,<br>
-    such as speech
-  </p>
+	<h2>Mental retardation</h2>
+	<h3>highly varying</h3>
+	<p>
+		Mainly affects areas<br>
+		related to communication,<br>
+		such as speech
+	</p>
 </slide>
 <slide>
-  <h2>Alzeimer’s</h2>
-  <h3>Increased risks</h3>
-  <p>
-    Characteristics of the<br>
-    memory loss disease develop<br>
-    at a much younger age
-  </p>
+	<h2>Alzeimer’s</h2>
+	<h3>Increased risks</h3>
+	<p>
+		Characteristics of the<br>
+		memory loss disease develop<br>
+		at a much younger age
+	</p>
 </slide>
 <slide>
-  <h2>Alzeimer’s</h2>
-  <h3>Increased risks</h3>
-  <p>
-    A protein linked to<br>
-    early-onset Alzeimer’s is<br>
-    triplicated in Down’s
-  </p>
+	<h2>Alzeimer’s</h2>
+	<h3>Increased risks</h3>
+	<p>
+		A protein linked to<br>
+		early-onset Alzeimer’s is<br>
+		triplicated in Down’s
+	</p>
 </slide>
 
 <!--EXPERIENCE-->
 
 <slide class='anchor'>
-  <h2 class='chromosome'>Experience</h2>
+	<h2 class='chromosome'>Experience</h2>
 </slide>
 <slide class='menu' data-menu='experience'>
-  <item>Early 20th century</item>
-  <item>Mid 20th century</item>
-  <item>Present</item>
+	<item>Early 20th century</item>
+	<item>Mid 20th century</item>
+	<item>Present</item>
 </slide>
 
 <!--Early 20th century-->
 <slide class='menu' data-menu='experience' data-selected='early 20th century'></slide>
 
 <slide>
-  <h2>Low life expectancy</h2>
-  <p>
-    In 1910, those with Down<br>
-    syndrome on average lived<br>
-    to be 9 years old
-  </p>
+	<h2>Low life expectancy</h2>
+	<p>
+		In 1910, those with Down<br>
+		syndrome on average lived<br>
+		to be 9 years old
+	</p>
 </slide>
 <slide>
-  <h2>Discrimination</h2>
-  <p>
-    The pejorative<br>
-    <quote>Mongolian idiots</quote><br>
-    was widely used
-  </p>
+	<h2>Discrimination</h2>
+	<p>
+		The pejorative<br>
+		<quote>Mongolian idiots</quote><br>
+		was widely used
+	</p>
 </slide>
 <slide>
-  <h2>Forced sterilization</h2>
-  <p>
-    Supported by the Supreme<br>
-     Court, neurologically ill people<br>
-     were forced to be sterilized
-  </p>
+	<h2>Forced sterilization</h2>
+	<p>
+		Supported by the Supreme<br>
+		 Court, neurologically ill people<br>
+		 were forced to be sterilized
+	</p>
 </slide>
 
 <!--Mid 20th century-->
 <slide class='menu' data-menu='experience' data-selected='mid 20th century'></slide>
 
 <slide>
-  <h2>Holocaust</h2>
-  <p>
-    A majority of disabled people<br>
-    targeted during the Holocaust<br>
-    have Down syndrome
-  </p>
+	<h2>Holocaust</h2>
+	<p>
+		A majority of disabled people<br>
+		targeted during the Holocaust<br>
+		have Down syndrome
+	</p>
 </slide>
 <slide>
-  <h2>Overlooked by doctors</h2>
-  <p>
-    Infants were denied<br>
-    heart surgeries and<br>
-    sometimes even food
-  </p>
+	<h2>Overlooked by doctors</h2>
+	<p>
+		Infants were denied<br>
+		heart surgeries and<br>
+		sometimes even food
+	</p>
 </slide>
 <slide>
-  <h2>Improving life expectancy</h2>
-  <p>
-    In the 1940s, the average<br>
-    Down syndrome case lived<br>
-    to 20 years old
-  </p>
+	<h2>Improving life expectancy</h2>
+	<p>
+		In the 1940s, the average<br>
+		Down syndrome case lived<br>
+		to 20 years old
+	</p>
 </slide>
 
 <!--Now-->
 <slide class='menu' data-menu='experience' data-selected='present'></slide>
 
 <slide>
-  <h2>Present</h2>
-  <p>
-    80% of adults with<br>
-    Down syndrome now live<br>
-    to be 55 or older
-  </p>
+	<h2>Present</h2>
+	<p>
+		80% of adults with<br>
+		Down syndrome now live<br>
+		to be 55 or older
+	</p>
 </slide>
 <slide>
-  <h2>Present</h2>
-  <p>
-    Americans with Disabilities<br>
-    Act (ADA) bans discrimination<br>
-    of people with disabilities
-  </p>
+	<h2>Present</h2>
+	<p>
+		Americans with Disabilities<br>
+		Act (ADA) bans discrimination<br>
+		of people with disabilities
+	</p>
 </slide>
 
 <!--CAUSES-->
 
 <slide class='anchor'>
-  <h2 class='chromosome'>Causes</h2>
+	<h2 class='chromosome'>Causes</h2>
 </slide>
 <slide class='menu' data-menu='causes'>
-  <item>Chromosomal level</item>
-  <item>Family level</item>
-  <item>Gene level</item>
+	<item>Chromosomal level</item>
+	<item>Family level</item>
+	<item>Gene level</item>
 </slide>
 
 <!--Cell level-->
 
 <slide class='menu' data-menu='causes' data-selected='chromosomal level'></slide>
 <slide>
-  <h2>Nondisjunction</h2>
-  <h3>95% of cases</h3>
-  <p>
-    Chromosomes of the 21st<br>
-    pair fail to separate<br>
-    during meiosis
-  </p>
+	<h2>Nondisjunction</h2>
+	<h3>95% of cases</h3>
+	<p>
+		Chromosomes of the 21st<br>
+		pair fail to separate<br>
+		during meiosis
+	</p>
 </slide>
 <slide>
-  <h2>Nondisjunction</h2>
-  <h3>95% of cases</h3>
-  <p>
-    Resulting in a gamete<br>
-    with one extra<br>
-    chromosome 21
-  </p>
+	<h2>Nondisjunction</h2>
+	<h3>95% of cases</h3>
+	<p>
+		Resulting in a gamete<br>
+		with one extra<br>
+		chromosome 21
+	</p>
 </slide>
 <slide>
-  <h2>Nondisjunction</h2>
-  <h3>95% of cases</h3>
-  <p>
-    Most nondisjunction<br>
-    cases come from the<br>
-    maternal side
-  </p>
+	<h2>Nondisjunction</h2>
+	<h3>95% of cases</h3>
+	<p>
+		Most nondisjunction<br>
+		cases come from the<br>
+		maternal side
+	</p>
 </slide>
 <slide>
-  <h2>Nondisjunction</h2>
-  <h3>95% of cases</h3>
-  <p>
-    Risk increases as a mother<br>
-    ages and her chromosomes<br>
-    become <quote>stickier</quote>
-  </p>
+	<h2>Nondisjunction</h2>
+	<h3>95% of cases</h3>
+	<p>
+		Risk increases as a mother<br>
+		ages and her chromosomes<br>
+		become <quote>stickier</quote>
+	</p>
 </slide>
 <slide>
-  <h2>Translocation</h2>
-  <h3>4% of cases</h3>
-  <p>
-    After nondisjunction, the<br>
-    extra chromosome breaks off<br>
-    and joins another pair
-  </p>
+	<h2>Translocation</h2>
+	<h3>4% of cases</h3>
+	<p>
+		After nondisjunction, the<br>
+		extra chromosome breaks off<br>
+		and joins another pair
+	</p>
 </slide>
 <slide>
-  <h2>Mosaicism</h2>
-  <h3>1% of cases</h3>
-  <p>
-    Instead of meiosis,<br>
-    nondisjunction occurs<br>
-    during the mitosis
-  </p>
+	<h2>Mosaicism</h2>
+	<h3>1% of cases</h3>
+	<p>
+		Instead of meiosis,<br>
+		nondisjunction occurs<br>
+		during the mitosis
+	</p>
 </slide>
 <slide>
-  <h2>Mosaicism</h2>
-  <h3>1% of cases</h3>
-  <p>
-    The offspring has a mix<br>
-    of cells with trisomy 21<br>
-    and cells without
-  </p>
+	<h2>Mosaicism</h2>
+	<h3>1% of cases</h3>
+	<p>
+		The offspring has a mix<br>
+		of cells with trisomy 21<br>
+		and cells without
+	</p>
 </slide>
 
 <!--Family level-->
 <slide class='menu' data-menu='causes' data-selected='family level'></slide>
 <slide>
-  <h2>Nondisjunction carrier</h2>
-  <h3>1% likelihood of recurrence</h3>
-  <p>
-    If one child has Down’s<br>
-    from nondisjunction, the next<br>
-    is more likely to it too
-  </p>
+	<h2>Nondisjunction carrier</h2>
+	<h3>1% likelihood of recurrence</h3>
+	<p>
+		If one child has Down’s<br>
+		from nondisjunction, the next<br>
+		is more likely to it too
+	</p>
 </slide>
 <slide>
-  <h2>Nondisjunction carrier</h2>
-  <h3>1% likelihood of recurrence</h3>
-  <p>
-    For mothers under 30,<br>
-    the risk is ten times<br>
-    more than normal
-  </p>
+	<h2>Nondisjunction carrier</h2>
+	<h3>1% likelihood of recurrence</h3>
+	<p>
+		For mothers under 30,<br>
+		the risk is ten times<br>
+		more than normal
+	</p>
 </slide>
 <slide>
-  <h2>Translocation carrier</h2>
-  <h3>2-100% likelihood of recurrence</h3>
-  <p>
-    The parent may have<br>
-    a translocation in<br>
-    their karyotype
-  </p>
+	<h2>Translocation carrier</h2>
+	<h3>2-100% likelihood of recurrence</h3>
+	<p>
+		The parent may have<br>
+		a translocation in<br>
+		their karyotype
+	</p>
 </slide>
 <slide>
-  <h2>Translocation carrier</h2>
-  <h3>2-100% likelihood of recurrence</h3>
-  <p>
-    This could be detected, but<br>
-    recurrence still varies widely<br>
-    by sex and other factors
-  </p>
+	<h2>Translocation carrier</h2>
+	<h3>2-100% likelihood of recurrence</h3>
+	<p>
+		This could be detected, but<br>
+		recurrence still varies widely<br>
+		by sex and other factors
+	</p>
 </slide>
 <slide>
-  <h2>One parent has Down’s</h2>
-  <h3>50% of offspring affected</h3>
-  <p>
-    The parent have a 50%<br>
-    likelihood of producing<br>
-    trisomy 21 gametes
-  </p>
+	<h2>One parent has Down’s</h2>
+	<h3>50% of offspring affected</h3>
+	<p>
+		The parent have a 50%<br>
+		likelihood of producing<br>
+		trisomy 21 gametes
+	</p>
 </slide>
 
 <slide class='menu' data-menu='causes' data-selected='gene level'></slide>
 <slide>
-  <h2>Gene mapping</h2>
-  <p>
-    A number of locations on<br>
-    chromosome 21 are linked<br>
-    to Down syndrome features
-  </p>
+	<h2>Gene mapping</h2>
+	<p>
+		A number of locations on<br>
+		chromosome 21 are linked<br>
+		to Down syndrome features
+	</p>
 </slide>
 <slide>
-  <h2>Discovery of DYRK</h2>
-  <p>
-    A gene producing the<br>
-    protein DYRK was linked to<br>
-    abnormal brain development
-  </p>
+	<h2>Discovery of DYRK</h2>
+	<p>
+		A gene producing the<br>
+		protein DYRK was linked to<br>
+		abnormal brain development
+	</p>
 </slide>
 
 <!--DETECTION-->
 
 <slide class='anchor'>
-  <h2 class='chromosome'>Detection</h2>
+	<h2 class='chromosome'>Detection</h2>
 </slide>
 <slide class='menu' data-menu='detection'>
-  <item>Prenatal screening</item>
-  <item>Prenatal diagnostic</item>
-  <item>Post-birth symptoms</item>
+	<item>Prenatal screening</item>
+	<item>Prenatal diagnostic</item>
+	<item>Post-birth symptoms</item>
 </slide>
 
 <!--Prenatal screening-->
 <slide class='menu' data-menu='detection' data-selected='prenatal screening'></slide>
 
 <slide>
-  <h2>Prenatal screening</h2>
-  <p>
-    3-4 screenings are moderately<br>
-    accurate at detecting the<br>
-    syndrome in fetuses
-  </p>
+	<h2>Prenatal screening</h2>
+	<p>
+		3-4 screenings are moderately<br>
+		accurate at detecting the<br>
+		syndrome in fetuses
+	</p>
 </slide>
 <slide>
-  <h2>Alpha fetoprotein (AFP)</h2>
-  <img src='afp.png'>
-  <h3>15-20 weeks into pregnancy</h3>
-  <p>
-    A protein produced in the liver<br>
-    of the fetus and circulating<br>
-    in the mother’s blood
-  </p>
+	<h2>Alpha fetoprotein (AFP)</h2>
+	<img src='afp.png'>
+	<h3>15-20 weeks into pregnancy</h3>
+	<p>
+		A protein produced in the liver<br>
+		of the fetus and circulating<br>
+		in the mother’s blood
+	</p>
 </slide>
 <slide>
-  <h2>Alpha fetoprotein (AFP)</h2>
-  <h3>15-20 weeks into pregnancy</h3>
-  <img src='afp.png'>
-  <p>
-    High levels suggest birth<br>
-    defects, while low levels<br>
-    imply Down syndrome
-  </p>
+	<h2>Alpha fetoprotein (AFP)</h2>
+	<h3>15-20 weeks into pregnancy</h3>
+	<img src='afp.png'>
+	<p>
+		High levels suggest birth<br>
+		defects, while low levels<br>
+		imply Down syndrome
+	</p>
 </slide>
 <slide>
-  <h2>Nuchal translucency scan</h2>
-  <img src='ultrasound.jpg'>
-  <p>
-    An ultrasound of the<br>
-    fetus’s neck which detects<br>
-    chromosome abnormalities
-  </p>
+	<h2>Nuchal translucency scan</h2>
+	<img src='ultrasound.jpg'>
+	<p>
+		An ultrasound of the<br>
+		fetus’s neck which detects<br>
+		chromosome abnormalities
+	</p>
 </slide>
 
 <!--Prenatal diagnostic-->
 <slide class='menu' data-menu='detection' data-selected='prenatal diagnostic'></slide>
 
 <slide>
-  <h2>Prenatal diagnostic</h2>
-  <p>
-    Done if screening tests show<br>
-    positives, they produce<br>
-    more definitive results
-  </p>
+	<h2>Prenatal diagnostic</h2>
+	<p>
+		Done if screening tests show<br>
+		positives, they produce<br>
+		more definitive results
+	</p>
 </slide>
 <slide>
-  <h2>Chorionic villus sampling</h2>
-  <h3>9-12 weeks into pregnancy</h3>
-  <p>
-    Samples the womb<br>
-    cells that nourish<br>
-    the fetus
-  </p>
+	<h2>Chorionic villus sampling</h2>
+	<h3>9-12 weeks into pregnancy</h3>
+	<p>
+		Samples the womb<br>
+		cells that nourish<br>
+		the fetus
+	</p>
 </slide>
 <slide>
-  <h2>Amniocentesis</h2>
-  <h3>14-18 weeks into pregnancy</h3>
-  <img src='amniocentesis.jpg'>
-  <p>
-    Genetic analysis on shed<br>
-    skin cells of the fetus<br>
-    in the amniotic fluids
-  </p>
+	<h2>Amniocentesis</h2>
+	<h3>14-18 weeks into pregnancy</h3>
+	<img src='amniocentesis.jpg'>
+	<p>
+		Genetic analysis on shed<br>
+		skin cells of the fetus<br>
+		in the amniotic fluids
+	</p>
 </slide>
 
 <!--After birth-->
 <slide class='menu' data-menu='detection' data-selected='post-birth symptoms'></slide>
 
 <slide>
-  <h2>Low muscle tone</h2>
-  <h3>Immediately after birth</h3>
-  <p>
-    Muscles are weaker than<br>
-    normal infants, only<br>
-    contracting partially
-  </p>
+	<h2>Low muscle tone</h2>
+	<h3>Immediately after birth</h3>
+	<p>
+		Muscles are weaker than<br>
+		normal infants, only<br>
+		contracting partially
+	</p>
 </slide>
 
 <!--TREATMENT-->
 
 <slide class='anchor'>
-  <h2 class='chromosome'>Treatment</h2>
+	<h2 class='chromosome'>Treatment</h2>
 </slide>
 <slide class='menu' data-menu='treatment'>
-  <item>Physical defects</item>
-  <item>Mental defects</item>
+	<item>Physical defects</item>
+	<item>Mental defects</item>
 </slide>
 
 <!--Fixing defects-->
 <slide class='menu' data-menu='treatment' data-selected='physical defects'></slide>
 
 <slide>
-  <h2>Medication</h2>
-  <h3>Respiratory infections</h3>
-  <p>
-    Advancements in antibiotics<br>
-    can treat many infections<br>
-    common with the syndrome
-  </p>
+	<h2>Medication</h2>
+	<h3>Respiratory infections</h3>
+	<p>
+		Advancements in antibiotics<br>
+		can treat many infections<br>
+		common with the syndrome
+	</p>
 </slide>
 <slide>
-  <h2>Physical therapy</h2>
-  <h3>Low muscle tone</h3>
-  <p>
-    Physical therapy can<br>
-    sometimes increase<br>
-    muscle strength
-  </p>
+	<h2>Physical therapy</h2>
+	<h3>Low muscle tone</h3>
+	<p>
+		Physical therapy can<br>
+		sometimes increase<br>
+		muscle strength
+	</p>
 </slide>
 <slide>
-  <h2>Surgery</h2>
-  <h3>Heart & digestive defects</h3>
-  <p>
-    Open-heart and intestinal<br>
-    surgeries can often restore<br>
-    conditions to normal
-  </p>
+	<h2>Surgery</h2>
+	<h3>Heart & digestive defects</h3>
+	<p>
+		Open-heart and intestinal<br>
+		surgeries can often restore<br>
+		conditions to normal
+	</p>
 </slide>
 
 <!--Complete cure?-->
 <slide class='menu' data-menu='treatment' data-selected='mental defects'></slide>
 <slide>
-  <h2>Speech therapy</h2>
-  <p>
-    Therapists can help<br>
-    children with Down syndrome<br>
-    learn speech alongside peers
-  </p>
+	<h2>Speech therapy</h2>
+	<p>
+		Therapists can help<br>
+		children with Down syndrome<br>
+		learn speech alongside peers
+	</p>
 </slide>
 <slide>
-  <h2>Medication</h2>
-  <p>
-    New drugs undergoing<br>
-    testing may solve the memory<br>
-    and learning problems.
-  </p>
+	<h2>Medication</h2>
+	<p>
+		New drugs undergoing<br>
+		testing may solve the memory<br>
+		and learning problems.
+	</p>
 </slide>
 <slide class='quote'>
-  <blockquote>
-    ...recent advances in neuroscience and genetics are starting to raise the prospect of pharmaceutical interventions. Several clinical trials of drugs to improve memory and learning in adults with Down syndrome are now under way.
-  </blockquote>
+	<blockquote>
+		...recent advances in neuroscience and genetics are starting to raise the prospect of pharmaceutical interventions. Several clinical trials of drugs to improve memory and learning in adults with Down syndrome are now under way.
+	</blockquote>
 </slide>
 
 <!--BIBLIOGRAPY-->
 
 <slide></slide>
 <slide class='anchor'>
-  
-  <h3>Bibliography</h3>
-  
-  <bib>
-    Tocci, Salvatore. <i>Down Syndrome</i>. Danbury. Grolier, 2000.
-  </bib><bib>
-    <quote>Down Syndrome.</quote> <i>Online Mendelian Inheritance in Man</i>, OMIM. Johns Hopkins University, Baltimore, MD. 2019, <small>omim.org/entry/190685</small>.
-  </bib><bib>
-    Sherman et. al. <quote>Epidemiology of Down Syndrome.</quote> <i>MRDD Research Reviews</i>, Wiley-Liss, 2007, pp. 13:221-227.
-  </bib><bib>
-    Roberts et. al. <quote>Language and communication development in Down syndrome.</quote> <i>MRDD Research Reviews</i>, Wiley-Liss, 2007, pp. 13:26-35.
-  </bib><bib>
-    Underwood, Emily. <quote>Can Down Syndrome Be Treated?</quote> <i>Science</i>, 2014, pp. 964-967.
-  </bib>
-  
+	
+	<h3>Bibliography</h3>
+	
+	<bib>
+		Tocci, Salvatore. <i>Down Syndrome</i>. Danbury. Grolier, 2000.
+	</bib><bib>
+		<quote>Down Syndrome.</quote> <i>Online Mendelian Inheritance in Man</i>, OMIM. Johns Hopkins University, Baltimore, MD. 2019, <small>omim.org/entry/190685</small>.
+	</bib><bib>
+		Sherman et. al. <quote>Epidemiology of Down Syndrome.</quote> <i>MRDD Research Reviews</i>, Wiley-Liss, 2007, pp. 13:221-227.
+	</bib><bib>
+		Roberts et. al. <quote>Language and communication development in Down syndrome.</quote> <i>MRDD Research Reviews</i>, Wiley-Liss, 2007, pp. 13:26-35.
+	</bib><bib>
+		Underwood, Emily. <quote>Can Down Syndrome Be Treated?</quote> <i>Science</i>, 2014, pp. 964-967.
+	</bib>
+	
 </slide>
 
 <slide>
 
-  <h3>Bibliography</h3>
+	<h3>Bibliography</h3>
 
-  <bib>
-    <quote>Down Syndrome.</quote> <i>Mayo Clinic</i>, 2018, <small>mayoclinic.org/diseases-conditions/down-syndrome/diagnosis-treatment/drc-20355983</small>.
-  </bib><bib>
-    <quote>Down Syndrome: Musculoskeletal Effects.</quote> <i>OrthoInfo</i>, American Academy of Orthopaedic Surgeons, 2019, <small>orthoinfo.aaos.org/en/diseases--conditions/down-syndrome-musculoskeletal-effects</small>.
-  </bib><bib>
-    Khatri, Minesh. <quote>Alpha-Fetoprotein (AFP) Screening Test.</quote> <i>WebMD</i>, 2019, <small>webmd.com/baby/afp-blood-test-pregnancy</small>.
-  </bib><bib>
-    <quote>Alpha-Fetoprotein (AFP) Test.</quote> <i>MedlinePlus</i>, 2020, <small>medlineplus.gov/lab-tests/alpha-fetoprotein-afp-test</small>.
-  </bib><bib>
-    <quote>Down Syndrome Human and Civil Rights Timeline.</quote> <i>Global Down Syndrome Foundation</i>, 2018, <small>globaldownsyndrome.org/about-down-syndrome/history-of-down-syndrome</small>.
-  </bib>
-  
+	<bib>
+		<quote>Down Syndrome.</quote> <i>Mayo Clinic</i>, 2018, <small>mayoclinic.org/diseases-conditions/down-syndrome/diagnosis-treatment/drc-20355983</small>.
+	</bib><bib>
+		<quote>Down Syndrome: Musculoskeletal Effects.</quote> <i>OrthoInfo</i>, American Academy of Orthopaedic Surgeons, 2019, <small>orthoinfo.aaos.org/en/diseases--conditions/down-syndrome-musculoskeletal-effects</small>.
+	</bib><bib>
+		Khatri, Minesh. <quote>Alpha-Fetoprotein (AFP) Screening Test.</quote> <i>WebMD</i>, 2019, <small>webmd.com/baby/afp-blood-test-pregnancy</small>.
+	</bib><bib>
+		<quote>Alpha-Fetoprotein (AFP) Test.</quote> <i>MedlinePlus</i>, 2020, <small>medlineplus.gov/lab-tests/alpha-fetoprotein-afp-test</small>.
+	</bib><bib>
+		<quote>Down Syndrome Human and Civil Rights Timeline.</quote> <i>Global Down Syndrome Foundation</i>, 2018, <small>globaldownsyndrome.org/about-down-syndrome/history-of-down-syndrome</small>.
+	</bib>
+	
 </slide>
 
 <slide class='anchor'>
 
-  <h1 class='chromosome'>Down</h1>
-  <h1 class='chromosome'>Synd</h1>
-  <h1 class='chromosome'>rome</h1>
-  
-  <h3><i>A presentation by Kevin Wu & Xing <quote>Shawn</quote> Liu</i></h3>
+	<h1 class='chromosome'>Down</h1>
+	<h1 class='chromosome'>Synd</h1>
+	<h1 class='chromosome'>rome</h1>
+	
+	<h3><i>A presentation by Kevin Wu & Xing <quote>Shawn</quote> Liu</i></h3>
 
-  <small>
-    
-    Honors Biology &middot; AHS 2020<br>
-    
-    <small>
-      
-      All <slides-counter></slides-counter> slides are made with HTML<br>
+	<small>
+		
+		Honors Biology &middot; AHS 2020<br>
+		
+		<small>
+			
+			All <slides-counter></slides-counter> slides are made with HTML<br>
 
-      Font by Donald Knuth<br>
-      
-      Hosted on NeoCities.org<br>
-      
-      CC-BY-SA<br>
-      
-    </small>
+			Font by Donald Knuth<br>
+			
+			Hosted on NeoCities.org<br>
+			
+			CC-BY-SA<br>
+			
+		</small>
 
-  </small>
+	</small>
 
 </slide>
 
-    </main>
+		</main>
 
 <!--PROGRESS BARS-->
-    
-    <slides-progress></slides-progress>
-    <time-progress></time-progress>
-    
+		
+		<slides-progress></slides-progress>
+		<time-progress></time-progress>
+		
 <!--WOBBLY CHROMOSOME FILTERS-->
-    
-    <svg id='filters'>
-      <defs>
-        <filter id='theme'>
-          <feColorMatrix in="SourceGraphic"
-              type="matrix"
-              values="0.25 0 0 0 0
-                      0 0 0 0 0
-                      0.5 0.25 0 0 0
-                      0 0 0 1 0" />
-        </filter>
-        <filter id='distort-0'>
-          <feTurbulence baseFrequency='0.005' type='fractalNoise'/>
-          <feColorMatrix type='hueRotate' values='0'/>
-          <feDisplacementMap in='SourceGraphic' xChannelSelector='R' yChannelSelector='B' scale='40'/>
-          <feGaussianBlur stdDeviation='3'/>
-          <feComponentTransfer result='main'>
-            <feFuncA type='gamma' amplitude='50' exponent='5'/>
-          </feComponentTransfer>
-          <feColorMatrix type='matrix' values='0 0 0 0 0
-                                               0 0 0 0 0
-                                               0 0 0 0 0
-                                               0 0 0 1 0'/>
-          <feGaussianBlur stdDeviation='10'/>
-          <feComposite operator='over' in='main'/>
-        </filter>
-        <filter id='distort-1'>
-          <feTurbulence baseFrequency='0.004' type='fractalNoise'/>
-          <feColorMatrix type='hueRotate' values='60'/>
-          <feDisplacementMap in='SourceGraphic' xChannelSelector='R' yChannelSelector='B' scale='80'/>
-          <feGaussianBlur stdDeviation='3'/>
-          <feComponentTransfer result='main'>
-            <feFuncA type='gamma' amplitude='50' exponent='5'/>
-          </feComponentTransfer>
-          <feColorMatrix type='matrix' values='0 0 0 0 0
-                                               0 0 0 0 0
-                                               0 0 0 0 0
-                                               0 0 0 1 0'/>
-          <feGaussianBlur stdDeviation='10'/>
-          <feComposite operator='over' in='main'/>
-        </filter>
-      </defs>
-    </svg>
+		
+		<svg id='filters'>
+			<defs>
+				<filter id='theme'>
+					<feColorMatrix in="SourceGraphic"
+							type="matrix"
+							values="0.25 0 0 0 0
+											0 0 0 0 0
+											0.5 0.25 0 0 0
+											0 0 0 1 0" />
+				</filter>
+				<filter id='distort-0'>
+					<feTurbulence baseFrequency='0.005' type='fractalNoise'/>
+					<feColorMatrix type='hueRotate' values='0'/>
+					<feDisplacementMap in='SourceGraphic' xChannelSelector='R' yChannelSelector='B' scale='40'/>
+					<feGaussianBlur stdDeviation='3'/>
+					<feComponentTransfer result='main'>
+						<feFuncA type='gamma' amplitude='50' exponent='5'/>
+					</feComponentTransfer>
+					<feColorMatrix type='matrix' values='0 0 0 0 0
+																							 0 0 0 0 0
+																							 0 0 0 0 0
+																							 0 0 0 1 0'/>
+					<feGaussianBlur stdDeviation='10'/>
+					<feComposite operator='over' in='main'/>
+				</filter>
+				<filter id='distort-1'>
+					<feTurbulence baseFrequency='0.004' type='fractalNoise'/>
+					<feColorMatrix type='hueRotate' values='60'/>
+					<feDisplacementMap in='SourceGraphic' xChannelSelector='R' yChannelSelector='B' scale='80'/>
+					<feGaussianBlur stdDeviation='3'/>
+					<feComponentTransfer result='main'>
+						<feFuncA type='gamma' amplitude='50' exponent='5'/>
+					</feComponentTransfer>
+					<feColorMatrix type='matrix' values='0 0 0 0 0
+																							 0 0 0 0 0
+																							 0 0 0 0 0
+																							 0 0 0 1 0'/>
+					<feGaussianBlur stdDeviation='10'/>
+					<feComposite operator='over' in='main'/>
+				</filter>
+			</defs>
+		</svg>
 
-    <script>
+		<script>
 
-let currentSlide = 0 , bandingAnimation
-
+let currentSlide = 1, bandingAnimation
 const
+doc	= document,
+body	= doc.getElementsByTagName('body')[0],
+slides	= [...doc.getElementsByTagName('slide')],
+anchors	= [...doc.getElementsByClassName('anchor')].map(anchor=>slides.indexOf(anchor)),
+menus	= [...doc.getElementsByClassName('menu')],
+lastSlide	= slides.length - 1,
+slidesCounter	= doc.getElementsByTagName('slides-counter')[0],
+slidesProgress	= doc.getElementsByTagName('slides-progress')[0],
+timeProgress	= doc.getElementsByTagName('time-progress')[0],
 
-doc    = document,
-
-body   = doc.getElementsByTagName('body')[0],
-
-slides = [...doc.getElementsByTagName('slide')],
-
-anchors = [...doc.getElementsByClassName('anchor')].map(anchor=>slides.indexOf(anchor)),
-
-menus = [...doc.getElementsByClassName('menu')],
-
-lastSlide = slides.length - 1,
-
-slidesCounter = doc.getElementsByTagName('slides-counter')[0],
-
-slidesProgress = doc.getElementsByTagName('slides-progress')[0],
-timeProgress = doc.getElementsByTagName('time-progress')[0],
-
-goTo = ( slide ) => {
-  
-  const normalizedSlide = Math.min ( Math.max ( 0 , slide ) , lastSlide )
-  
-  currentSlide = normalizedSlide
-  
-  slides.forEach ( slide => {
-    
-    slide.hidden = true
-    
-  } )
-  
-  slides[currentSlide].hidden = false
-
-  setRandomBanding()
-  
-  slidesProgress.style.width = 100*currentSlide/lastSlide + 'vw'
-
+goTo = slide => {
+	const clampedSlide = Math.min(Math.max(0,slide),lastSlide)
+	currentSlide = clampedSlide
+	
+	slides.forEach(slide => slide.hidden = true)
+	slides[currentSlide].hidden = false
+	
+	setRandomBanding()
+	slidesProgress.style.width = 100*currentSlide/lastSlide + 'vw'
 },
 
 randomInt = ( low , high ) => {
-  
-  return (
-    
-    low +
-    
-    Math.round(
-    
-      ( high - low ) * Math.random()
-    
-    )
-    
-  )
-  
+	return low + Math.round( (high - low) * Math.random() )
 },
 
 chooseRandomBanding = length => {
-  
-  let banding = 'linear-gradient(90deg,'
-  
-  for ( let i = 0 ; i <= length ; i++ ){
-    
-    banding += randomInt ( 0 , 1 ) ? 'white' : 'var(--theme)'
-    
-    if ( i < length ) {
-    
-      banding += ','
-    
-    } else {
-      
-      banding += ')'
-      
-    }
-  
-  }
-  
-  return banding
-  
+	let banding = 'linear-gradient(90deg'
+	for ( let i = 0 ; i <= length ; i++ ) {
+		banding += ',' + ( randomInt(0,1) ? 'white' : 'var(--theme)' )
+	}
+	banding += ')'
+	return banding
 },
 
 setRandomBanding = () => {
-  
-  clearTimeout( bandingAnimation )
-  
-  const chromosomes = [...slides[currentSlide].getElementsByClassName('chromosome')]
-  
-  chromosomes.forEach( chromosome => {
-    
-    const length = Math.floor ( 100 * chromosome.getBoundingClientRect().width / window.innerWidth )
-    
-    const centromere = randomInt ( 20 , 80 )
-    
-    chromosome.style.setProperty(
-      
-      '--banding',
-      
-      chooseRandomBanding( length )
+	clearTimeout(bandingAnimation)
 
-    )
+	const chromosomes = [...slides[currentSlide].getElementsByClassName('chromosome')]
+	
+	chromosomes.forEach( chromosome => {
+		const length = Math.floor( 100 * chromosome.getBoundingClientRect().width / window.innerWidth )
+		const centromere = randomInt(20,80)
+		
+		chromosome.style.setProperty(
+			'--banding',
+			chooseRandomBanding(length)
+		)
+		chromosome.style.setProperty(
+			'--centromere',
+			centromere + '%'
 
-    chromosome.style.setProperty(
-      
-      '--centromere',
-      
-      centromere + '%'
-
-    )
-
-    chromosome.style.setProperty(
-      
-      '--rotation',
-      
-      ( randomInt(0 , 1) * 2 - 1 ) * randomInt ( 5 , 5 + 5 - Math.abs( centromere - 50 ) / 6 ) + 'deg'
-
-    )
-
-  })
-  
-  bandingAnimation = setTimeout( setRandomBanding , 1000 )
-
+		)
+		chromosome.style.setProperty(
+			'--rotation',
+			( randomInt(0 , 1) * 2 - 1 ) * randomInt ( 5 , 5 + 5 - Math.abs( centromere - 50 ) / 6 ) + 'deg'
+		)
+	})
+	bandingAnimation = setTimeout(setRandomBanding,1000)
 },
 
 startTimer = () => {
-  
-  let seconds = 0
-  
-  setInterval(()=>{
-    
-    timeProgress.style.width = ( 600 - seconds++ ) / 6 + 'vw'
-    
-  },1000)
-  
+	let seconds = 0
+	setInterval(()=>{
+		timeProgress.style.width = ( 600 - seconds++ ) / 6 + 'vw'
+	},1000)
 }
 
 doc.addEventListener( 'keydown' , keyDown => {
-  
-  if ( keyDown.location === 0 ){
-
-  }
-  
+	if ( keyUp.location != 0 ) return
+	const key = keyUp.key
+	goTo (
+		key.match (/(Arrow|Page)(Up|Left)/) ? currentSlide - 1
+		: key.match (/\d/) ? anchors[key]
+																					: currentSlide + 1
+	)
 })
 
-doc.addEventListener( 'keyup' , keyUp => {
-  
-  if ( keyUp.location === 0 ) {
-
-    const key = keyUp.key
-  
-    goTo (
-      
-      key.match ( /(Arrow|Page)(Up|Left)/ ) ? currentSlide - 1
-      
-                       : key.match ( /\d/ ) ? anchors[key]
-
-                                            : currentSlide + 1
-
-    )
-    
-  }
-
+doc.addEventListener('keyup', keyUp => {	
+}
 })
 
-doc.addEventListener( 'click' , () => {
-  
-  goTo ( currentSlide + 1 )
-  
+doc.addEventListener('click', () => {
+	goTo(currentSlide + 1)
 })
 
 slidesCounter.innerText = lastSlide + 1
-
 startTimer()
 
 menus.forEach(menu => {
-  
-  menu.innerHTML = doc.querySelector(`[data-menu=${menu.getAttribute('data-menu')}]`).innerHTML
-  
-  const items = [...menu.children], selected = menu.getAttribute('data-selected')
-  
-  if ( selected ) {
-    
-    items.forEach(item=>{
-      
-      if(item.innerHTML.toLowerCase() == selected.toLowerCase()){
-        
-        item.classList.add('selected')
-        
-      }
-      
-    })
-  
-
-  }
-
+	menu.innerHTML = doc.querySelector(`[data-menu=${menu.getAttribute('data-menu')}]`).innerHTML
+	const items = [...menu.children], selected = menu.getAttribute('data-selected')
+	if ( selected ) {
+		items.forEach(item=>{
+			if(item.innerHTML.toLowerCase() == selected.toLowerCase()){
+				item.classList.add('selected') 
+			}		
+		})
+	
+	}
 })
 
 goTo ( 0 )
 
-    </script>
-  </body>
+		</script>
+	</body>
 </html>
